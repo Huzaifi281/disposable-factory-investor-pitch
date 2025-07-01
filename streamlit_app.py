@@ -1,6 +1,43 @@
 import streamlit as st
 import plotly.graph_objects as go
 
+# --- Function for Contact Footer ---
+def contact_footer():
+    st.markdown("""
+    <hr style="margin-top: 40px; border: 0.5px solid #e5e7eb;">
+    <div style="text-align: center; color: #6b7280; font-size: 14px; padding: 15px; line-height: 1.8;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 8px;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <span style="color: #10b981;">📌</span> <strong>Syed Huzaifa</strong>
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <span style="color: #10b981;">🏢</span> Office #09, First Floor, Royal Square Plaza
+            </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <span style="color: #10b981;">🏙</span> Gulberg Residencia, Islamabad
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <a href="https://wa.me/923359199818" 
+                   style="color: #10b981; text-decoration: none; display: flex; align-items: center; gap: 4px;" 
+                   target="_blank">
+                   <span style="color: #10b981;">📱</span>
+                   <strong style="color: #25D366;">WhatsApp: +92 335 9199 818</strong>
+                </a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <a href="mailto:shhkohat22@gmail.com" 
+                   style="color: #10b981; text-decoration: none; display: flex; align-items: center; gap: 4px;" 
+                   target="_blank">
+                   <span style="color: #10b981;">✉️</span>
+                   <strong>shhkohat22@gmail.com</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
 # Page config
 st.set_page_config(page_title="Disposable Factory – Investor Pitch", layout="wide")
 
@@ -110,6 +147,9 @@ with tabs[0]:
         margin=dict(l=20, r=20, t=30, b=20)
     )
     st.plotly_chart(fig, use_container_width=True)
+    
+    contact_footer()
+
 
 with tabs[1]:
     # Operational Advantage Tab
@@ -159,6 +199,8 @@ with tabs[1]:
         yaxis_title="Cost Index (Lower is better)"
     )
     st.plotly_chart(fig, use_container_width=True)
+    
+    contact_footer()    
     
 with tabs[2]:  # 📈 Financial Returns
     st.markdown("""
@@ -232,6 +274,8 @@ with tabs[2]:  # 📈 Financial Returns
         </div>
     </div>
     """, unsafe_allow_html=True)
+    
+    contact_footer()
 
 with tabs[3]:  # 🛡 Risk Management
     st.markdown("""
@@ -314,3 +358,5 @@ with tabs[3]:  # 🛡 Risk Management
         </div>
     </div>
     """, unsafe_allow_html=True)
+
+    contact_footer()
